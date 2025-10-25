@@ -1,0 +1,11 @@
+services:
+  partyfin:
+    build: .
+    container_name: partyfin
+    environment:
+      - NODE_ENV=production
+      - JELLYFIN_URL=${JELLYFIN_URL}
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
